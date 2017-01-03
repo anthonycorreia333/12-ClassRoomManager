@@ -1,0 +1,28 @@
+<div class="container">
+    <button type="button" class="btn btn-primary pull-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Student</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Classes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in studentGridCtrl.students">
+                <td>{{student.name}}</td>
+                <td>{{student.emailAddress}}</td>
+                <td>{{student.telephone}}</td>
+                <td>{{student.classes}}</td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button ui-sref="student.details" type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                        <button ng-click="studentGridCtrl.deleteStudent(student)" type="button" class="btn btn-danger"><i class="fa fa-window-close" aria-hidden="true"></i> Delete
+                        </button>
+                    </div>
+                </td>
+        </tbody>
+    </table>
+</div>
